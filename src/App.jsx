@@ -1,6 +1,7 @@
 
 import './App.css'
-import Header from './assets/components/Header'
+import Footer from './assets/components/Footer/Footer'
+import Header from './assets/components/Header/Header'
 
 function App() {
   
@@ -9,6 +10,7 @@ function App() {
     <>
       <Header />
       <main>Movie Review App Main Section</main>
+      <Footer />
     </>
   )
 }

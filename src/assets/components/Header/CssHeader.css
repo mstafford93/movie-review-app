@@ -1,0 +1,32 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background-color: rgb(46, 25, 49);
+    color: rgb(212, 233, 252);
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+nav a {
+    padding-right: 1rem;
+    margin-left: 1rem;
+    text-decoration: none;
+    color: rgb(212, 233, 252);
+    border-right: 2px solid rgb(212, 233, 252);
+}
+
+nav a:last-child {
+    border: none;
+}
+
+@media (max-width: 800px){
+    nav h1 {
+        font-size: 1.25rem;
+        align-self: center;
+    }
+}
