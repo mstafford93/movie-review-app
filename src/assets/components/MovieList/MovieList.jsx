@@ -4,10 +4,10 @@ import './CssMovieList.css'
 const MovieList = () => {
   return (
     <section className='movie-list'>
-      <header className='movie-header'>
+      <header className='center movie-header'>
         <h2>Popular</h2>
-        <div>
-          <ul className='movie-filter'>
+        <div className='center'>
+          <ul className='movie-filter center'>
             <li className='movie-filter-item'>8 +</li>
             <li className='movie-filter-item'>7 +</li>
             <li className='movie-filter-item'>6 +</li> 

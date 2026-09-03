@@ -14,3 +14,8 @@ body {
   background-color: rgb(90, 48, 95);
   color: rgb(212, 233, 252);
 }
+
+.center {
+  display: flex;
+  align-items: center;
+}
