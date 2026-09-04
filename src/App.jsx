@@ -38,9 +38,9 @@ function App() {
   return (
     <>
       <Header />
-      <MovieList handleFilter={handleFilter}/>
+      <MovieList handleFilter={handleFilter} starRating={starRating}/>
       <div className='movie-card-list'>
-      {movies.map(movie => (<MovieCard key={movie.id} movie={movie}/>))}
+      {movies.map(movie => (<MovieCard key={movie.id} movie={movie} />))}
       </div>
       <Footer />
     </>

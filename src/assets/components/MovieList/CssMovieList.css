@@ -36,3 +36,7 @@
 .movie-sorting option {
     font-weight: 800;
 }
+
+.movie-filter-item.active {
+    color: rgb(90, 100, 109);
+}
