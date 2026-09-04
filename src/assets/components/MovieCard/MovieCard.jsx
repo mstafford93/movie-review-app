@@ -1,24 +1,36 @@
 import React from 'react'
 import './CssMovieCard.css'
+import PropTypes from 'prop-types'
 import Star from '../../images/star.png'
 
-const MovieCard = () => {
+const MovieCard = ({movie}) => {
   return (
     <div className='movie-card-container'>
-    <a href="#MovieCard" className='movie-card'>
-      <img src="https://images.unsplash.com/photo-1611419010196-a360856fc42f?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    <a href={`https://www.themoviedb.org/movie/${movie.id}`} target='_blank' className='movie-card'>
+      <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
        alt="Movie" className='movie-img'/>
        <div className="movie-details">
-        <h3>Man Standing</h3>
+        <h3>{movie.title}</h3>
         <div className='movie-date center'>
-          <p>23 / 01 / 2050</p>
-          <p className='number-rating'> 8.0 <img src={Star} className='star-rating' alt="star-rating" /></p>
+          <p>{movie.release_date}</p>
+          <p className='number-rating'> {movie.vote_average} <img src={Star} className='star-rating' alt="star-rating" /></p>
         </div>
-        <p className='movie-description'>Horror</p>
+        <p className='movie-description'>{movie.overview.slice(0,50)+"..."}</p>
        </div>
     </a>
     </div>
   )
+};
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    poster_path: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string,
+    vote_average: PropTypes.number,
+    overview: PropTypes.string
+  })
 }
 
 export default MovieCard
