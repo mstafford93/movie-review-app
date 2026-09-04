@@ -11,7 +11,7 @@ function App() {
   const [movies, setMovies] = useState([])
   const [moviesFiltered, setMoviesFiltered] = useState([])
   const [starRating,setStarRating] = useState(0)
-  //console.log(movies)
+  console.log(movies)
 
   const fetchMovies = async() => {
     const response  = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=de6807c13d206c1db3e9fdd3b2192033");
@@ -40,7 +40,7 @@ function App() {
       <Header />
       <MovieList handleFilter={handleFilter} starRating={starRating}/>
       <div className='movie-card-list'>
-      {movies.map(movie => (<MovieCard key={movie.id} movie={movie} />))}
+      {movies.length > 0 ? (movies.map(movie => (<MovieCard key={movie.id} movie={movie} />))) : (<p className='center movie-header'>No Movies Found With Selected Rating</p>)}
       </div>
       <Footer />
     </>
